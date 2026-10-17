@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Local你看不看",
+  title: "放映室",
   description: "在线影视播放平台",
 };
 
