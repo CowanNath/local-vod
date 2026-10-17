@@ -84,7 +84,7 @@ export function SourceSettingsModal({
 
   const handleExport = () => {
     const data = {
-      _meta: "vanessa-vod-sources",
+      _meta: "local-vod-sources",
       version: 1,
       activeSourceId: activeSource.id,
       sources: sources,
@@ -93,7 +93,7 @@ export function SourceSettingsModal({
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `vanessa-vod-sources-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `local-vod-sources-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };

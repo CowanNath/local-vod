@@ -1,7 +1,7 @@
 services:
-  vanessa-vod:
+  local-vod:
     build: .
-    container_name: vanessa-vod
+    container_name: local-vod
     init: true
     ports:
       - "8608:8608"

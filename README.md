@@ -1,4 +1,4 @@
-# Vanessa VOD
+# Local VOD
 
 基于 Next.js 的视频点播应用，支持多源聚合、在线播放、FFmpeg 下载。
 
@@ -52,27 +52,27 @@ Docker 容器以非 root 用户（uid 1001）运行。如果收藏/源配置/下
 ### 1. 直接构建运行
 
 ```bash
-git clone https://github.com/CowanNath/vanessa-vod.git
-cd vanessa-vod
+git clone https://github.com/CowanNath/local-vod.git
+cd local-vod
 
 # 构建镜像
-docker build -t vanessa-vod .
+docker build -t local-vod .
 
 # 运行容器
 docker run -d \
-  --name vanessa-vod \
+  --name local-vod \
   -p 8608:8608 \
-  -v vanessa-downloads:/app/downloads \
+  -v local-vod-downloads:/app/downloads \
   -e DOWNLOAD_PROXY=http://127.0.0.1:7890 \
   --restart unless-stopped \
-  vanessa-vod
+  local-vod
 ```
 
 ### 2. Docker Compose（推荐）
 
 ```bash
-git clone https://github.com/CowanNath/vanessa-vod.git
-cd vanessa-vod
+git clone https://github.com/CowanNath/local-vod.git
+cd local-vod
 
 # 直接启动
 docker compose up -d
@@ -82,9 +82,9 @@ docker compose up -d
 
 ```yaml
 services:
-  vanessa-vod:
+  local-vod:
     build: .
-    container_name: vanessa-vod
+    container_name: local-vod
     ports:
       - "8608:8608"
     volumes:
@@ -112,10 +112,10 @@ volumes:
 
 ```bash
 # 查看日志
-docker logs -f vanessa-vod
+docker logs -f local-vod
 
 # 重启
-docker restart vanessa-vod
+docker restart local-vod
 
 # 停止并删除
 docker compose down
@@ -124,7 +124,7 @@ docker compose down
 docker compose up -d --build
 
 # 进入容器
-docker exec -it vanessa-vod sh
+docker exec -it local-vod sh
 ```
 
 ## 本地开发

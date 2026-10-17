@@ -47,7 +47,7 @@ export function Header({ onToggleSidebar }: HeaderProps) {
             className="flex items-center gap-1.5 sm:gap-2 shrink-0"
           >
             <Film className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-            <span className="font-bold text-base sm:text-lg hidden sm:inline">Vanessa你看不看</span>
+            <span className="font-bold text-base sm:text-lg hidden sm:inline">Local你看不看</span>
           </button>
 
           <form onSubmit={handleSearch} className="flex-1 min-w-0 mx-1 sm:mx-auto sm:max-w-md">
